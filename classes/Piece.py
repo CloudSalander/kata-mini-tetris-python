@@ -17,8 +17,17 @@ class Piece:
         for position in self.__positions:
             if position.y >= max_row-1: return True  
         return False
-    
+
+    def canMoveLeft(self):
+        for position in self.__positions:
+            if position.x <= 0: return False  
+        return True
+
     def moveDown(self):
         for position in self.__positions:
-            position.y += 1  
+            position.y += 1 
+
+    def moveLeft(self):
+        for position in self.__positions:
+            position.x -= 1  
     
