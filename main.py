@@ -15,11 +15,11 @@ def isRightMove(move):
 
 move = -1
 board = Board(BOARD_ROWS,BOARD_COLUMNS)
-board.draw()
+board.play()
 
 
 while move != 0:
     writeAvailableMoves()
     move = int(input("Enter movement"))
     if(isRightMove(move)): 
-        board.draw(move)
+        board.play(Move(move))

@@ -12,3 +12,13 @@ class Piece:
         for position in self.__positions:
             if position.x == x and position.y == y: return True  
         return False
+    
+    def isLastRow(self,max_row):
+        for position in self.__positions:
+            if position.y >= max_row-1: return True  
+        return False
+    
+    def moveDown(self):
+        for position in self.__positions:
+            position.y += 1  
+    

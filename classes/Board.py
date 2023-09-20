@@ -1,4 +1,5 @@
 from classes.Piece import Piece
+from classes.Move import Move
 
 class Board:
 
@@ -10,8 +11,11 @@ class Board:
         self.__columns = columns
         self.__piece = Piece()
 
-    def draw(self, move = None):
-        if type(move) != None: print(move)  
+    def play(self, move = None):
+        if type(move) != None: self.__movePiece(move)
+        self.__draw()
+        
+    def __draw(self):
         rows_count = 0
         while rows_count < self.__rows:
             self.__drawRow(rows_count)
@@ -26,3 +30,10 @@ class Board:
             print(char_to_print,end="")
             current_column += 1
         print("")
+
+    def __movePiece(self,move):
+        if self.__piece.isLastRow(self.__rows) == False:
+            if move == Move.DOWN:
+                print("HOLA!")
+                self.__piece.moveDown()
+            
