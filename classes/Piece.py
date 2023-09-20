@@ -22,6 +22,11 @@ class Piece:
         for position in self.__positions:
             if position.x <= 0: return False  
         return True
+    
+    def canMoveRight(self,max_column):
+        for position in self.__positions:
+            if position.x >= max_column-1: return False  
+        return True
 
     def moveDown(self):
         for position in self.__positions:
@@ -30,4 +35,8 @@ class Piece:
     def moveLeft(self):
         for position in self.__positions:
             position.x -= 1  
+        
+    def moveRight(self):
+        for position in self.__positions:
+            position.x += 1  
     

@@ -38,4 +38,6 @@ class Board:
                 self.__piece.moveDown()
             elif move == Move.LEFT:
                 if self.__piece.canMoveLeft(): self.__piece.moveLeft()
+            elif move == Move.RIGHT:
+                if self.__piece.canMoveRight(self.__columns): self.__piece.moveRight()
             
