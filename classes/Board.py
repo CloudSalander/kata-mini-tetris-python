@@ -10,7 +10,8 @@ class Board:
         self.__columns = columns
         self.__piece = Piece()
 
-    def draw(self):  
+    def draw(self, move = None):
+        if type(move) != None: print(move)  
         rows_count = 0
         while rows_count < self.__rows:
             self.__drawRow(rows_count)

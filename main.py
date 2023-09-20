@@ -2,14 +2,24 @@ from classes.Move import Move
 from classes.Board import Board
 BOARD_ROWS = 10
 BOARD_COLUMNS = 10
+MOVE_MSG = "Next move!"
+AVAILABLE_MOVES = ["1-DOWN","2-LEFT","3-RIGHT","4-ROTATE"]
 
-move = Move.DOWN
+def writeAvailableMoves():
+    for available_move in AVAILABLE_MOVES:
+        print(available_move)
+
+def isRightMove(move):
+    if move > 0 and move < 5: return True 
+    return False
+
+move = -1
 board = Board(BOARD_ROWS,BOARD_COLUMNS)
 board.draw()
 
+
 while move != 0:
-    print("1-DOWN")
-    print("2-RIGHT")
-    print("3-LEFT")
-    print("4-DOWN")
+    writeAvailableMoves()
     move = int(input("Enter movement"))
+    if(isRightMove(move)): 
+        board.draw(move)
