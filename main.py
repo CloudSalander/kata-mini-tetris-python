@@ -17,7 +17,6 @@ move = -1
 board = Board(BOARD_ROWS,BOARD_COLUMNS)
 board.play()
 
-
 while move != 0:
     writeAvailableMoves()
     move = int(input("Enter movement"))

@@ -18,25 +18,26 @@ class Piece:
             if position.y >= max_row-1: return True  
         return False
 
-    def canMoveLeft(self):
-        for position in self.__positions:
-            if position.x <= 0: return False  
-        return True
-    
-    def canMoveRight(self,max_column):
-        for position in self.__positions:
-            if position.x >= max_column-1: return False  
-        return True
-
     def moveDown(self):
         for position in self.__positions:
             position.y += 1 
 
     def moveLeft(self):
-        for position in self.__positions:
-            position.x -= 1  
+        if self.__canMoveLeft(): 
+            for position in self.__positions:
+                position.x -= 1  
         
-    def moveRight(self):
-        for position in self.__positions:
-            position.x += 1  
+    def moveRight(self,max_column):
+        if self.__canMoveRight(max_column): 
+            for position in self.__positions:
+                position.x += 1  
     
+    def __canMoveLeft(self):
+        for position in self.__positions:
+            if position.x <= 0: return False  
+        return True
+    
+    def __canMoveRight(self,max_column):
+        for position in self.__positions:
+            if position.x >= max_column-1: return False  
+        return True

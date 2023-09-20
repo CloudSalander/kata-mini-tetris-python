@@ -32,12 +32,11 @@ class Board:
         print("")
 
     def __movePiece(self,move):
-        print(move)
         if self.__piece.isLastRow(self.__rows) == False:
             if move == Move.DOWN:
                 self.__piece.moveDown()
             elif move == Move.LEFT:
-                if self.__piece.canMoveLeft(): self.__piece.moveLeft()
+               self.__piece.moveLeft()
             elif move == Move.RIGHT:
-                if self.__piece.canMoveRight(self.__columns): self.__piece.moveRight()
+                self.__piece.moveRight(self.__columns)
             
