@@ -39,4 +39,6 @@ class Board:
                self.__piece.moveLeft()
             elif move == Move.RIGHT:
                 self.__piece.moveRight(self.__columns)
+            elif move == Move.ROTATE:
+                self.__piece.rotate(self.__rows,self.__columns)
             
