@@ -20,5 +20,5 @@ board.play()
 while move != "0":
     writeAvailableMoves()
     move = input("Enter movement")
-    if(isRightMove(move) and move!= "0"): 
+    if(isRightMove(move) and int(move) != 0): 
             board.play(Move(int(move)))
